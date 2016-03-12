@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
 
 public class ListFacesActivity extends AppCompatActivity {
 
@@ -16,6 +18,10 @@ public class ListFacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_faces);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void exit(View view){
