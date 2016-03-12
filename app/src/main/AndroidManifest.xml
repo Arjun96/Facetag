@@ -27,6 +27,14 @@
         <activity
             android:name=".ListFacesActivity"
             android:label="@string/title_activity_list_faces"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditAccountActivity"
+            android:label="@string/title_activity_edit_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GroupsActivity"
+            android:label="@string/title_activity_groups"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

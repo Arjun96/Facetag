@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Nhacks</string>
+    <string name="app_name">Face Tag</string>
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_sign_up">Make an account</string>
     <string name="title_activity_list_faces">ListFacesActivity</string>
+    <string name="title_activity_edit_account">EditAccountActivity</string>
+    <string name="title_activity_groups">GroupsActivity</string>
 </resources>
