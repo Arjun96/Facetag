@@ -17,7 +17,8 @@
         android:id="@+id/button_login"
         android:layout_marginBottom="38dp"
         android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="login" />
 
     <Button
         android:layout_width="wrap_content"

@@ -23,4 +23,14 @@ public class GroupsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void group1(View view){
+        Intent intent = new Intent(this, ListFacesActivity.class);
+        startActivity(intent);
+    }
+
+    public void group2(View view){
+        Intent intent = new Intent(this, ListFacesActivity.class);
+        startActivity(intent);
+    }
+
 }
