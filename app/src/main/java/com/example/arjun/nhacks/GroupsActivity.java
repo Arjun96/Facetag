@@ -14,13 +14,6 @@ public class GroupsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_groups);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
-
-
-        //HELLO
     }
 
     public void exit(View view){
