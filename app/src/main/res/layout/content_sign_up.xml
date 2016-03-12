@@ -16,10 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/SignUp"
+        android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="104dp"
-        android:id="@+id/SignUp" />
+        android:layout_marginTop="152dp" />
 
     <TextView
         android:layout_width="wrap_content"
