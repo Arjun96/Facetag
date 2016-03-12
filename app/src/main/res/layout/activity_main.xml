@@ -57,7 +57,7 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -70,7 +70,7 @@
         android:enabled="true"
         android:hint="Enter Username" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
