@@ -19,7 +19,7 @@
         android:id="@+id/SignUp"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="152dp" />
+        android:layout_marginTop="98dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,21 +43,20 @@
         android:layout_alignStart="@+id/textView3"
         android:layout_marginTop="32dp" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/username"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_toRightOf="@+id/SignUp"
-        android:layout_toEndOf="@+id/SignUp"
         android:nestedScrollingEnabled="false"
         android:hint="Enter Username"
         android:enabled="true"
         android:editable="true"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_above="@+id/password"
+        android:layout_toEndOf="@+id/SignUp" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -75,9 +74,10 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/back"
+        android:onClick="back"
         android:layout_below="@+id/SignUp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:onClick="back" />
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        android:layout_marginTop="38dp" />
 
 </RelativeLayout>
