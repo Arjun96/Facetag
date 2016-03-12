@@ -18,7 +18,6 @@ public class ListFacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_faces);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar != null){
