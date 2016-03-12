@@ -124,5 +124,6 @@
         android:id="@+id/Exit"
         android:layout_alignTop="@+id/Save"
         android:layout_alignRight="@+id/textView12"
-        android:layout_alignEnd="@+id/textView12" />
+        android:layout_alignEnd="@+id/textView12"
+        android:onClick="exit" />
 </RelativeLayout>
