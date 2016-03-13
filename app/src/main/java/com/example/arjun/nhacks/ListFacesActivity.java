@@ -7,13 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.v7.app.ActionBar;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.support.v7.app.ActionBar;
-
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
@@ -26,6 +19,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import android.view.MenuItem;
 
 public class ListFacesActivity extends AppCompatActivity {
 
@@ -65,8 +60,8 @@ public class ListFacesActivity extends AppCompatActivity {
                 //iv.setImageBitmap(bp);
                 storeImage(bp);
 
-//                Intent intent = new Intent(this, ScanResults.class);
-                //              startActivity(intent);
+             Intent inte = new Intent(this, ScanResults.class);
+                              startActivity(inte);
 
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
@@ -75,6 +70,13 @@ public class ListFacesActivity extends AppCompatActivity {
             }
         }
 
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), GroupsActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
 
     }
 
