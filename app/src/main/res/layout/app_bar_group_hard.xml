@@ -5,13 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.arjun.nhacks.GroupHardActivity">
+    tools:context="com.example.arjun.nhacks.GroupHardActivity"
+    android:onClick="add">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
-        android:touchscreenBlocksFocus="false">
+        android:touchscreenBlocksFocus="false"
+        android:onClick="add"
+        android:clickable="true">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -36,6 +39,6 @@
         android:scaleType="center"
         app:backgroundTint="#25cfad"
         android:clickable="true"
-        android:onClick="capture" />
+        android:onClick="add" />
 
 </android.support.design.widget.CoordinatorLayout>

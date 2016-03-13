@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        Intent intent = new Intent(this, GroupsActivity.class);
+        Intent intent = new Intent(this, GroupHardActivity.class);
         startActivity(intent);
     }
 

@@ -39,7 +39,11 @@
         <activity
             android:name=".GroupHardActivity"
             android:label="@string/title_activity_group_hard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ScanResults"
+            android:label="ScanResults"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
     </application>
 
 </manifest>
