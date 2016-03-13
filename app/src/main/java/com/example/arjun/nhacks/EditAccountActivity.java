@@ -22,8 +22,6 @@ public class EditAccountActivity extends AppCompatActivity {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-
     }
 
     public void exit(View view){
