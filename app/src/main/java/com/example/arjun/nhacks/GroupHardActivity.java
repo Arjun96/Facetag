@@ -3,12 +3,14 @@ package com.example.arjun.nhacks;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +27,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import android.content.ContextWrapper;
+import android.provider.MediaStore;
+import android.provider.MediaStore.Images;
+import android.provider.MediaStore.Images.Media;
+
 
 
 public class GroupHardActivity extends AppCompatActivity
@@ -33,6 +40,7 @@ public class GroupHardActivity extends AppCompatActivity
     public static final int MEDIA_TYPE_IMAGE = 1;//wont need bc no video, only photos
 
     private Uri fileUri;
+    public Bitmap capture = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +53,6 @@ public class GroupHardActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 add(view);
-                //The following should not appaer. But its a useful function that I need
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
 
                 //Intent intent = new Intent(GroupHardActivity.this, ScanResults.class);
                // intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -106,17 +110,14 @@ public class GroupHardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nhacks) {
+        } else if (id == R.id.oweek) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.wasaga) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.ewb) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.setting) {
 
         }
 
@@ -134,17 +135,21 @@ public class GroupHardActivity extends AppCompatActivity
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
+        //capture = (Bitmap) data.getExtras().get("data");
+
         if (resultCode == RESULT_OK) {
-            Intent i;
+            Intent i;//UNEEDED
             switch (requestCode) {
                 case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE:
-                    //THIS IS YOUR Uri
-                    Uri uri=fileUri;
+                    Uri uri = fileUri;
                     break;
             }
         }
-        //BRANDON
 
+
+
+
+        //BRANDON CODE
 
         /*
         super.onActivityResult(requestCode, resultCode, data);
@@ -152,7 +157,6 @@ public class GroupHardActivity extends AppCompatActivity
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
 
-                Bitmap bp = (Bitmap) data.getExtras().get("data");
                 //iv.setImageBitmap(bp);
                 storeImage(bp);
             } else if (resultCode == RESULT_CANCELED) {
@@ -161,12 +165,14 @@ public class GroupHardActivity extends AppCompatActivity
                 // Image capture failed, advise user
             }
         }
-        //Step 3 of capturing picture
-*/
+
+*/      //Step 3 of capturing picture
         Intent inte = new Intent(this, ScanResults.class);
         startActivity(inte);
 
+
     }
+
 /*
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), GroupsActivity.class);
@@ -180,6 +186,7 @@ public class GroupHardActivity extends AppCompatActivity
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 
         /////////////////////////Check why URI not needed
+       // store();
         fileUri = getOutputMediaFileUri(); // create a file to save the image
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
         //Step 2 of capturing picture
@@ -189,7 +196,7 @@ public class GroupHardActivity extends AppCompatActivity
 
     }
 
-    private void storeImage(Bitmap image) {
+    public void storeImage(Bitmap image) {
         File pictureFile = getOutputMediaFile();
         FileOutputStream fos = null;
         if (pictureFile == null) {
@@ -206,38 +213,76 @@ public class GroupHardActivity extends AppCompatActivity
         } catch (IOException e) {
             // Log.d(TAG, "Error accessing file: " + e.getMessage());
         }
+
+
+
     }
-    private static Uri getOutputMediaFileUri(){
+    public Uri getOutputMediaFileUri(){
         return Uri.fromFile(getOutputMediaFile());
     }
+    public static File mediaStorageDir;
+    public void store(){
+        File a = this.getDir("capturePic", 0);
+        mediaStorageDir = new File(a.getParent(), "DemoFile");
 
-    private static File getOutputMediaFile(){
+        if (mediaStorageDir.isDirectory()){
+            Log.i("aa","a");
+
+        }
+        if (mediaStorageDir.isFile()){
+            Log.i("bb","b");
+
+        }
+
+    }
+    private File getOutputMediaFile(){
         // To be safe, you should check that the SDCard is mounted
         // using Environment.getExternalStorageState() before doing this.
        // File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                // Environment.DIRECTORY_PICTURES), "MyCameraApp");
 
        // /*
-      //  Context a = this.getApplicationContext();
-        File mediaStorageDir = new File(Environment.getExternalStorageDirectory()
-                + "/Android/data/"  + "/Captures");
-               // + getApplicationContext().getPackageName()
+      //  Context a = this.getApplicationContext();getExternalFilesDir getExternalStorageDirectory
+        mediaStorageDir = new File(Environment.getExternalStorageDirectory()
+                + "/Android/data/"  + "Captures");
+
 
         //*/// for use in external storage. not too sure to use if cannot use getApplicationContext().
         // This location works best if you want the created images to be shared
         // between applications and persist after your app has been uninstalled.
 
         // Create the storage directory if it does not exist
+
+
         if (! mediaStorageDir.exists()){
             if (! mediaStorageDir.mkdirs()){
-                //nope
+                Log.i("dsa","dsa");
             }
         }
+
+
+
+
+
         // Create a media file name
         String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
         File mediaFile;
         String mImageName="MI_"+ timeStamp +".jpg";
-        mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_" + mImageName + ".jpg");
+        mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_" + mImageName);
+        //this.getCapture().BitmapFactory.decodeFile(mediaFile.getAbsolutePath());
+        Log.v("WHHYY", mediaStorageDir + "\n");
+        Log.v ("WHHYY",mediaFile + "\n");
         return mediaFile;
+
     }
+
+   public Bitmap getCapture(){
+        return capture;
+  }
+
+    public void setCapture(Bitmap cap){
+         capture = cap;
+    }
+
 }
+

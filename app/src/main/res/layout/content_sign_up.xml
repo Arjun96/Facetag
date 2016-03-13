@@ -17,10 +17,16 @@
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/SignUp"
+        android:layout_marginTop="136dp"
+        android:onClick="signUp"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginStart="75dp"
         android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp"
-        android:onClick="signUp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#FFFFFFFF" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,10 +34,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Username"
         android:id="@+id/textView3"
-        android:layout_marginTop="103dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/SignUp"
-        android:layout_toStartOf="@+id/SignUp" />
+        android:layout_alignRight="@+id/SignUp"
+        android:layout_alignEnd="@+id/SignUp"
+        android:textColor="#FFFFFFFF" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,10 +48,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Password"
         android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/username"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="32dp" />
+        android:textColor="#FFFFFFFF" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -50,25 +60,29 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/username"
         android:nestedScrollingEnabled="false"
-        android:hint="Enter Username"
         android:enabled="true"
         android:editable="true"
         android:clickable="true"
-        android:layout_above="@+id/password"
-        android:layout_toEndOf="@+id/SignUp" />
+        android:text="                                      "
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:background="@color/colorPrimaryDark" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/password"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username"
         android:clickable="true"
         android:editable="true"
         android:enabled="true"
-        android:hint="Enter Password" />
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:textColor="#a9a4a4"
+        android:text="                                      "
+        android:background="@color/colorPrimaryDark" />
 
     <Button
         android:layout_width="wrap_content"
@@ -76,9 +90,24 @@
         android:text="Back"
         android:id="@+id/back"
         android:onClick="back"
-        android:layout_below="@+id/SignUp"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
-        android:layout_marginTop="38dp" />
+        android:background="@color/colorPrimary"
+        android:layout_alignTop="@+id/SignUp"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sign Up"
+        android:id="@+id/textView14"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
 
 </RelativeLayout>

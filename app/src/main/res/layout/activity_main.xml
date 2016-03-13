@@ -8,14 +8,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.arjun.nhacks.MainActivity"
-    android:background="#eae9b6">
+    android:background="@color/colorPrimary">
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:src="@drawable/temp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp" />
+        android:src="@drawable/logo"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
     <Button
@@ -24,10 +25,11 @@
         android:text="Login"
         android:id="@+id/button_login"
         android:onClick="login"
-        android:background="#e9e8b5"
+        android:background="@color/colorPrimary"
         android:layout_alignTop="@+id/button"
         android:layout_toLeftOf="@+id/username"
-        android:layout_toStartOf="@+id/username" />
+        android:layout_toStartOf="@+id/username"
+        android:textColor="#FFFFFFFF" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,10 +37,10 @@
         android:text="Sign up"
         android:id="@+id/button"
         android:onClick="signUp"
-        android:textColor="#000000"
+        android:textColor="#FFFFFFFF"
         android:focusableInTouchMode="false"
         android:enabled="true"
-        android:background="#e9e8b5"
+        android:background="@color/colorPrimary"
         android:shadowColor="#ffffff"
         android:layout_marginBottom="58dp"
         android:layout_alignParentBottom="true"
@@ -56,7 +58,8 @@
         android:layout_marginBottom="30dp"
         android:layout_above="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignStart="@+id/textView2"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,7 +72,8 @@
         android:layout_marginStart="58dp"
         android:layout_above="@+id/button_login"
         android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignStart="@+id/imageView1" />
+        android:layout_alignStart="@+id/imageView1"
+        android:textColor="#FFFFFFFF" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,10 +84,11 @@
         android:clickable="true"
         android:enabled="true"
         android:hint="                            "
-        android:background="#d0cfa1"
+        android:background="#823b64"
         android:layout_alignTop="@+id/textView"
         android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password" />
+        android:layout_alignStart="@+id/password"
+        android:textColor="#8e8e8e" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -94,7 +99,7 @@
         android:enabled="true"
         android:editable="true"
         android:clickable="true"
-        android:background="#d7d6a6"
+        android:background="#823b64"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
         android:layout_below="@+id/textView"

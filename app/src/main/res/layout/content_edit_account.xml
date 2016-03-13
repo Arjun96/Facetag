@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.arjun.nhacks.EditAccountActivity"
-    tools:showIn="@layout/activity_edit_account">
+    tools:showIn="@layout/activity_edit_account"
+    android:background="@color/colorPrimary">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,9 +19,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Add Social Networks"
         android:id="@+id/textView5"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,12 +30,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Facebook:"
         android:id="@+id/textView6"
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp" />
+        android:textColor="#ffffff"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignLeft="@+id/random"
+        android:layout_alignStart="@+id/random" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,29 +42,31 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Twitter:"
         android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Snapchat:"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginTop="31dp" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/Save"
+        android:layout_alignStart="@+id/Save" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Linkedin:"
+        android:id="@+id/textView8"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/textView11"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SnapChat"
         android:id="@+id/random"
-        android:layout_centerVertical="true"
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/textView10"
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8" />
 
@@ -73,7 +76,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="facebook.com/nhacks"
         android:id="@+id/textView9"
-        android:layout_alignTop="@+id/textView6"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@+id/textView10"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -83,7 +88,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="\@nhacks"
         android:id="@+id/textView10"
-        android:layout_alignTop="@+id/textView7"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/textView11"
         android:layout_alignLeft="@+id/textView9"
         android:layout_alignStart="@+id/textView9" />
 
@@ -93,7 +100,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="\@nhacks16"
         android:id="@+id/textView11"
-        android:layout_alignTop="@+id/textView8"
+        android:textColor="#ffffff"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView10"
         android:layout_alignStart="@+id/textView10" />
 
@@ -103,7 +111,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="linkedin.com/nhacks"
         android:id="@+id/textView12"
-        android:layout_alignTop="@+id/random"
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/textView8"
         android:layout_alignLeft="@+id/textView11"
         android:layout_alignStart="@+id/textView11" />
 
@@ -112,18 +121,22 @@
         android:layout_height="wrap_content"
         android:text="Save"
         android:id="@+id/Save"
+        android:layout_marginBottom="85dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/random"
-        android:layout_alignStart="@+id/random"
-        android:layout_marginBottom="85dp" />
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exit"
         android:id="@+id/Exit"
+        android:onClick="exit"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
         android:layout_alignTop="@+id/Save"
-        android:layout_alignRight="@+id/textView12"
-        android:layout_alignEnd="@+id/textView12"
-        android:onClick="exit" />
+        android:layout_alignRight="@+id/textView11"
+        android:layout_alignEnd="@+id/textView11" />
 </RelativeLayout>
