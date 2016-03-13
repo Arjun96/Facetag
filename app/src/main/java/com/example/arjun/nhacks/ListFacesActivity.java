@@ -25,9 +25,6 @@ import android.view.MenuItem;
 public class ListFacesActivity extends AppCompatActivity {
 
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
-    private Uri fileUri;
-
-    ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +82,7 @@ public class ListFacesActivity extends AppCompatActivity {
 
         /////////////////////////Check why URI not needed
 //                fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
     }

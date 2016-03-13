@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="random shit goes here"
+        android:text="This is where the scanned faces go"
         android:id="@+id/textView15"
         android:layout_below="@+id/textView16"
         android:layout_centerHorizontal="true"
