@@ -1,6 +1,5 @@
 package com.example.arjun.nhacks;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -41,40 +40,62 @@ public class GroupHardActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                add(view);
-                //The following should not appaer. But its a useful function that I need
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+        if(fab != null){
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    add(view);
+                    //The following should not appaer. But its a useful function that I need
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
 
 
-                //Intent intent = new Intent(GroupHardActivity.this, ScanResults.class);
-               // intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                //startActivity(intent);
+                    //Intent intent = new Intent(GroupHardActivity.this, ScanResults.class);
+                    // intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    //startActivity(intent);
 
-            }
-        });
+                }
+            });
+
+        }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+
+
+        if(drawer != null){
+            drawer.addDrawerListener(toggle);
+        }
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        fab.setRippleColor(12397);
+        if(navigationView != null){
+            navigationView.setNavigationItemSelectedListener(this);
+        }
+        if(fab != null){
+            fab.setRippleColor(12397);
+        }
+
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        if(navigationView != null){
+            navigationView.setNavigationItemSelectedListener(this);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);navigationView.setNavigationItemSelectedListener(this);
+
+            if(drawer != null){
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    super.onBackPressed();
+                }
+            }
         }
     }
 
@@ -121,7 +142,11 @@ public class GroupHardActivity extends AppCompatActivity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
+        if(drawer != null){
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
         return true;
     }
 
@@ -135,7 +160,6 @@ public class GroupHardActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         if (resultCode == RESULT_OK) {
-            Intent i;
             switch (requestCode) {
                 case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE:
                     //THIS IS YOUR Uri
@@ -163,8 +187,8 @@ public class GroupHardActivity extends AppCompatActivity
         }
         //Step 3 of capturing picture
 */
-        Intent inte = new Intent(this, ScanResults.class);
-        startActivity(inte);
+        Intent intent = new Intent(this, ScanResults.class);
+        startActivity(intent);
 
     }
 /*
@@ -191,7 +215,7 @@ public class GroupHardActivity extends AppCompatActivity
 
     private void storeImage(Bitmap image) {
         File pictureFile = getOutputMediaFile();
-        FileOutputStream fos = null;
+        FileOutputStream fos;
         if (pictureFile == null) {
             //   Log.d(TAG,
             //         "Error creating media file, check storage permissions: ");// e.getMessage());
@@ -228,11 +252,12 @@ public class GroupHardActivity extends AppCompatActivity
         // between applications and persist after your app has been uninstalled.
 
         // Create the storage directory if it does not exist
-        if (! mediaStorageDir.exists()){
-            if (! mediaStorageDir.mkdirs()){
-                //nope
-            }
-        }
+//        if(! mediaStorageDir.exists()){
+//            if(! mediaStorageDir.mkdirs()){
+//                //nope
+//            }
+//        }
+
         // Create a media file name
         String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
         File mediaFile;
