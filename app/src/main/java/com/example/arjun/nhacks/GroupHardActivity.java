@@ -164,6 +164,7 @@ public class GroupHardActivity extends AppCompatActivity
             } else {
                 // Image capture failed, advise user
             }
+
         }
 
 */      //Step 3 of capturing picture
