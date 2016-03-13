@@ -60,8 +60,8 @@ public class ListFacesActivity extends AppCompatActivity {
                 //iv.setImageBitmap(bp);
                 storeImage(bp);
 
-//                Intent intent = new Intent(this, ScanResults.class);
-                //              startActivity(intent);
+             Intent inte = new Intent(this, ScanResults.class);
+                              startActivity(inte);
 
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
